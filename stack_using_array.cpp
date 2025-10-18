@@ -32,32 +32,46 @@ class stack {
             cout<<"UNDERFLOW\n";
             return -1;
         }
+        cout<<"TOP ELEMENT OF STACK ";
         return this->arr[this->top];//chup caap top ele of arr return krdo
+        cout<<"\n";
     }
     bool isEmpty(){
         return this->top == -1;
     }
     int size(){
+        cout<<"SIZE OF STACK = ";
         return this->top + 1;
     }
     bool isFull(){
         return this->top == this->capacity -1;
     }
+    void display(){
+    if (this->top == -1){  //AGR KUCH NI H YAHI TOP = -1 SO EMPTY PRINT HOJAIGA
+        cout << "Stack is empty\n";
+        return;
+    }
+    cout << "Stack elements (top to bottom): ";
+    for (int i = this->top; i >= 0; i--){//stateing krna  h top se jana h 0 tak 
+        cout << this->arr[i] << " ";
+    }
+    cout << "\n";
+}
+
 };
 int main(){
    stack st(5);
    st.push(1);
+//    cout<<st.gettop();
+   st.push(3);
+   st.push(7);
    cout<<st.gettop();
-   
-//    st.push(1);
-//    st.push(2);
-//    st.push(3);
-//    cout<<st.gettop()<<"\n";
-//    st.push(4);
-//    st.push(5);
-//    cout<<st.gettop()<<"\n";
-//    st.push(8);
-//    st.pop();
-//    st.pop();
-//    cout<<st.gettop()<<"\n";
-}
+   cout<<st.size();
+   st.display();
+
+}   
+
+
+
+
+
