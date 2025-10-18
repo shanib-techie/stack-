@@ -6,8 +6,8 @@ class stack {
     int top;
     public:
     stack(int c){
-        this->capacity = capacity;
-        arr  = new int[capacity];
+        this->capacity = c;
+        arr  = new int[c];
         this->top = -1;
     }
     void push(int data){
@@ -23,9 +23,11 @@ class stack {
             cout<<"UNDERFLOW\n";
             return -45678;
         }
-        return this->arr[this->top];
+        int val = this->arr[this->top];
+        this->top--;
+        return val;
     }
-        int getpop (){
+        int peek (){
         if(this->top == -1){
             cout<<"UNDERFLOW\n";
             return -45678;
@@ -47,12 +49,12 @@ int main(){
    st.push(1);
    st.push(2);
    st.push(3);
-   cout<<st.getpop()<<"\n";
+   cout<<st.peek()<<"\n";
    st.push(4);
    st.push(5);
-   cout<<st.getpop()<<"\n";
+   cout<<st.peek()<<"\n";
    st.push(8);
    st.pop();
    st.pop();
-   cout<<st.getpop()<<"\n";
+   cout<<st.peek()<<"\n";
 }
