@@ -20,12 +20,10 @@
 //     }
 //     int pop (){
 //         if(this->top == -1){ //agr top wali last -1 mtlb kuch ni h so return krdena -1 
-//             cout<<"OVERFLOW\n";
+//             cout<<"OUNDERFLOW\n";
 //             return -1;
 //         }
-//         // int val = this->arr[this->top];
 //         this->top--;//simply top ki value remove ho jaigi 
-//         // return val;
 //     }
 //         int gettop(){
 //         if(this->top == -1){
@@ -60,14 +58,21 @@
 
 // };
 // int main(){
-//    stack st(5);
-//    st.push(1);
-// //    cout<<st.gettop();
-//    st.push(3);
-//    st.push(7);
-//    cout<<st.gettop();
-//    cout<<st.size();
-//    st.display();
+//     stack s1(5);
+//     s1.push(4);
+//     s1.push(2);
+//     s1.display();
+//     s1.push(8);
+//     s1.push(3);
+//     cout<<s1.size();
+//     s1.display();
+//     s1.pop();
+//     s1.pop();
+//     s1.pop();
+//     s1.display();
+//     cout<<s1.gettop();
+//     s1.pop();
+//     s1.display();
 
 // }   
 
@@ -75,3 +80,44 @@
 
 
 
+#include <iostream>
+using namespace std;
+class stack{
+    int capacity;
+    int* arr;
+    int top;
+    public:
+    stack( int c ){
+        this->capacity = c;
+        arr = new int[c];
+        this->top = -1;
+    };
+    int push(int d){
+        if(this->top == this->capacity -1){
+            cout<<"STACK IS FULL OR OVERFLOW...";
+            return -1;
+        }
+        this->top++;
+        this->arr[this->top] = d;
+    }
+    int pop(){
+        this->top--;
+    }
+    void display(){
+        cout<<"DISPLAY THESTACK :\n";
+        for(int i = this->top;i>=0;i--){
+            cout<<this->arr[i]<<"\n ";
+        }
+    };
+};
+int main(){
+    stack s1(5);
+    s1.push(4);
+    s1.push(5);
+    s1.push(4);
+    s1.push(2);
+    s1.push(1);
+    s1.push(4);
+    s1.display();
+
+}
