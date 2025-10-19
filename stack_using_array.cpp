@@ -76,48 +76,57 @@
 
 // }   
 
-
-
-
-
 #include <iostream>
 using namespace std;
 class stack{
+
     int capacity;
-    int* arr;
+    int * arr;
     int top;
     public:
-    stack( int c ){
-        this->capacity = c;
-        arr = new int[c];
+    stack(int capacity){
+        this->capacity = capacity;
+        arr = new int[capacity];
         this->top = -1;
-    };
-    int push(int d){
-        if(this->top == this->capacity -1){
-            cout<<"STACK IS FULL OR OVERFLOW...";
-            return -1;
-        }
-        this->top++;
-        this->arr[this->top] = d;
+    }
+   void push(int d){
+    if(this->top == this->capacity-1){
+        cout<<"STACK IS FULL ";
+    }
+    this->top++;
+    this->arr[this->top] = d;
     }
     int pop(){
+        if(this->top == -1){
+            cout<<"STACK IS ALREADY EMPTY";
+        }
         this->top--;
     }
     void display(){
-        cout<<"DISPLAY THESTACK :\n";
+        cout<<"ELEMENT OF STACK FROM (TOP TO BOTTOM):";
         for(int i = this->top;i>=0;i--){
-            cout<<this->arr[i]<<"\n ";
+            cout<<this->arr[i]<<"";
         }
+        cout<<endl;
+    }
+    void gettop(){
+        cout<<this->arr[this->top];
+    }
+    int size (){
+      return this->capacity;
+
     };
+
 };
 int main(){
     stack s1(5);
     s1.push(4);
-    s1.push(5);
-    s1.push(4);
+    s1.push(8);
     s1.push(2);
-    s1.push(1);
-    s1.push(4);
+    s1.gettop();
     s1.display();
+    
 
 }
+
+
