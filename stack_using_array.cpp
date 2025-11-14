@@ -125,6 +125,8 @@ int main(){
     s1.push(2);
     s1.gettop();
     s1.display();
+    s1.pop();
+    s1.display();
     
 
 }
