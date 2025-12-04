@@ -39,40 +39,40 @@
 
 
 
-#include <iostream>
-#include <stack>
-using namespace std;
-int main (){
-    stack <int> st;
-    st.push(20);
-    st.push(33);
-    st.push(44);
-    st.push(31);
-    st.push(11);
-    stack<int> temp;
-    while(st.size() > 0){
-        cout<<st.top()<<" ";
-        temp.push(st.top());
-        st.pop();    }
+// #include <iostream>
+// #include <stack>
+// using namespace std;
+// int main (){
+//     stack <int> st;
+//     st.push(20);
+//     st.push(33);
+//     st.push(44);
+//     st.push(31);
+//     st.push(11);
+//     stack<int> temp;
+//     while(st.size() > 0){
+//         cout<<st.top()<<" ";
+//         temp.push(st.top());
+//         st.pop();    }
 
 
-  //        while(temp.size() > 0){
-  //        st.push(temp.top());
+//   //        while(temp.size() > 0){
+//   //        st.push(temp.top());
 
-  //   }
-     while(temp.size() > 0){
-      st.push(temp.top());
+//   //   }
+//      while(temp.size() > 0){
+//       st.push(temp.top());
       
-      temp.pop();
-    }
+//       temp.pop();
+//     }
 
-    while (st.size( ) > 0)
-    { cout<<st.top()<<" ";
-    }
+//     while (st.size( ) > 0)
+//     { cout<<st.top()<<" ";
+//     }
     
 
 
-  cout<<st.size()<<"\n ";
-   cout<<temp.size()<<" ";
+//   cout<<st.size()<<"\n ";
+//    cout<<temp.size()<<" ";
 
-}
+// }

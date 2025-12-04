@@ -7,7 +7,7 @@ using namespace std;
 void recur_display_in_reverse_order(stack <int>& st){
     if(st.size() == 0) return;
     int x = st.top();
-    cout<<x<<" ";
+    cout<<x<<" "; //23
     st.pop();
     recur_display_in_reverse_order(st);
     st.push(x);
@@ -17,12 +17,11 @@ void recur_display_in_reverse_order(stack <int>& st){
 
 void recur_displaY(stack <int>& st){
     if(st.size() == 0) return;
-    int x = st.top();
-    st.pop();
-    recur_displaY(st);
-    cout<<x<<" ";
-    st.push(x);
-
+    int x = st.top();  //yaha store kra
+    st.pop(); //fhir pop kr diya same val ko
+    recur_displaY(st); //fhir dubara gyi toh voh element nhi hoga
+    cout<<x<<" "; //abb usko print kraya
+    st.push(x);  
 }
 int main(){
     stack<int> st;
@@ -32,6 +31,7 @@ int main(){
     st.push(77);
     st.push(11);
     recur_display_in_reverse_order(st);
+    cout<<st.top();
     cout<<endl;
     recur_displaY(st);
 }
