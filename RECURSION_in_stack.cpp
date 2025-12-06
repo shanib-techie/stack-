@@ -34,4 +34,6 @@ int main(){
     cout<<st.top();
     cout<<endl;
     recur_displaY(st);
+
+    // cout<<st.top();
 }
