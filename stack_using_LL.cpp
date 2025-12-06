@@ -4,7 +4,7 @@ class Node{
     public:
     int val;
     Node* next; 
-        Node(int value) {
+        Node(int val) {
         this->val = val;
        this->next = NULL;
     }
@@ -38,13 +38,28 @@ class stack{
         }
         return  head->val;
     }
-
+    
 };
+void display_rev(Node* head){
+    Node* temp = head;
+    while(temp!=NULL){
+        cout<<temp->val<<" ";
+        temp = temp->next;
+    }
+}
+void display(Node* head){
+    if(head != NULL){
+        display(head->next);
+        cout<<head->val<<" ";
+    }
+}
 int main(){
     stack st;
-    st.head(10);
-    st.head(20);
-    
+    st.push(10);
+    st.push(20);
+    display_rev(st.head);
+    cout<<endl;
+    display(st.head);
 
 
     
